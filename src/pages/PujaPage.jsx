@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, Button, Chip, Paper, Stack } from '@mui/material';
-import { Flame, Sparkles, BookOpen, Shield, Heart, Gift, UserCheck, MessageCircle, PhoneCall } from 'lucide-react';
+import { Flame, Sparkles, BookOpen, Shield, Heart, Gift, UserCheck, MessageCircle, PhoneCall, Scissors } from 'lucide-react';
 import { PUJA_CATEGORIES, BRAND_INFO } from '../data/pilgrimageData';
 import { Link } from 'react-router-dom';
 import DisclaimerBanner from '../components/DisclaimerBanner';
@@ -13,6 +13,7 @@ const ICON_MAP = {
   Shield: <Shield size={24} />,
   Heart: <Heart size={24} />,
   Gift: <Gift size={24} />,
+  Scissors: <Scissors size={24} />,
 };
 
 export default function PujaPage({ onOpenEnquiry }) {
@@ -40,7 +41,7 @@ export default function PujaPage({ onOpenEnquiry }) {
           elevation={0}
           sx={{
             p: 2,
-            mb: 4,
+            mb: 3,
             borderRadius: 3,
             backgroundColor: '#FFFBEB',
             border: '1.5px dashed #D97706',
@@ -52,6 +53,60 @@ export default function PujaPage({ onOpenEnquiry }) {
           </Typography>
         </Paper>
 
+        {/* Mundan Sanskar & Experienced Nai/Barber Service Highlight */}
+        <Paper
+          elevation={3}
+          sx={{
+            p: { xs: 2.5, sm: 3.5 },
+            mb: 4,
+            borderRadius: 4,
+            background: 'linear-gradient(135deg, #FFFDF8 0%, #FEE2E2 100%)',
+            border: '2px solid #DC2626',
+            boxShadow: '0 8px 24px rgba(220, 38, 38, 0.12)',
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={8}>
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }} flexWrap="wrap">
+                <Chip
+                  icon={<Scissors size={16} color="#FFF" />}
+                  label="मुंडन संस्कार एवं नाई सेवा"
+                  sx={{ backgroundColor: '#DC2626', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="✂️ अनुभवी व स्वच्छ नाई (Barber) उपलब्ध"
+                  sx={{ backgroundColor: '#800000', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="गंगा तट व मंदिर प्रांगण"
+                  sx={{ backgroundColor: 'rgba(5, 150, 105, 0.15)', color: '#065F46', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+              </Stack>
+              <Typography variant="h4" sx={{ fontWeight: 800, color: '#800000', mb: 1, fontSize: { xs: '1.3rem', sm: '1.7rem' } }}>
+                बच्चों के मुंडन संस्कार हेतु अनुभवी नाई (Barber) की उत्तम सुविधा
+              </Typography>
+              <Typography variant="body1" sx={{ color: '#4A3B32', lineHeight: 1.7, mb: 1.5 }}>
+                माँ विंध्यवासिनी के प्रांगण अथवा पावन गंगा तट (पक्का घाट) पर बच्चों के मुंडन संस्कार हेतु दक्ष, निपुण व स्वच्छ नाई (हजाम) की पूर्ण व्यवस्था की जाती है। वेदोक्त संकल्प, पुरोहित समन्वय एवं नाई सेवा हेतु पहले से संपर्क कर समय सुनिश्चित करें।
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                <Typography variant="caption" sx={{ color: '#DC2626', fontWeight: 700 }}>✓ स्वच्छ व सुरक्षित बाल कटाई</Typography>
+                <Typography variant="caption" sx={{ color: '#DC2626', fontWeight: 700 }}>✓ गंगा स्नान व रक्षा सूत्र संकल्प</Typography>
+                <Typography variant="caption" sx={{ color: '#DC2626', fontWeight: 700 }}>✓ तीर्थ पुरोहित द्वारा वेदोक्त संस्कार</Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'left', md: 'center' } }}>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ backgroundColor: '#DC2626', color: '#FFF', py: 1.5, px: 3.5, fontWeight: 800, fontSize: '1.02rem', borderRadius: 3, '&:hover': { backgroundColor: '#B91C1C' }, width: { xs: '100%', sm: 'auto' } }}
+                onClick={() => onOpenEnquiry && onOpenEnquiry('मुंडन संस्कार एवं नाई (Barber) सेवा')}
+              >
+                मुंडन / नाई सेवा पूछें
+              </Button>
+            </Grid>
+          </Grid>
+        </Paper>
+
         {/* Puja Cards Grid */}
         <Grid container spacing={3} sx={{ mb: 6 }}>
           {PUJA_CATEGORIES.map((puja) => (
@@ -60,7 +115,7 @@ export default function PujaPage({ onOpenEnquiry }) {
                 sx={{
                   height: '100%',
                   borderRadius: 3.5,
-                  border: '1.5px solid rgba(217, 119, 6, 0.2)',
+                  border: puja.hasBarberService ? '2px solid #DC2626' : '1.5px solid rgba(217, 119, 6, 0.2)',
                   display: 'flex',
                   flexDirection: 'column',
                   transition: 'all 0.3s ease',
@@ -97,6 +152,14 @@ export default function PujaPage({ onOpenEnquiry }) {
                   <Typography variant="body2" sx={{ color: '#4A3B32', mb: 2, lineHeight: 1.6, flexGrow: 1 }}>
                     {puja.description}
                   </Typography>
+
+                  {puja.hasBarberService && (
+                    <Box sx={{ mb: 1.5, p: 1.2, borderRadius: 2, backgroundColor: 'rgba(220, 38, 38, 0.08)', border: '1px solid rgba(220, 38, 38, 0.25)' }}>
+                      <Typography variant="caption" sx={{ color: '#DC2626', fontWeight: 800, display: 'block' }}>
+                        ✂️ अनुभवी नाई (Barber) सेवा उपलब्ध • मुंडन हेतु संपर्क करें
+                      </Typography>
+                    </Box>
+                  )}
 
                   <Box sx={{ mb: 2.5, p: 1.2, borderRadius: 2, backgroundColor: 'rgba(217, 119, 6, 0.08)' }}>
                     <Typography variant="caption" sx={{ color: '#B45309', fontWeight: 700, display: 'block' }}>

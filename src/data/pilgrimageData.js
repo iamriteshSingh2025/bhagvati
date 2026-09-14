@@ -1,17 +1,17 @@
-// Pilgrimage Data & Service Catalog for Maa Vindhyavasini Darshan & RAKA Mishra
+// Pilgrimage Data & Service Catalog for Mangalam Vindhyachal Dham & RAKA Mishra
 
 export const BRAND_INFO = {
-  name: 'माँ विंध्यवासिनी दर्शन',
-  englishName: 'Maa Vindhyavasini Darshan',
+  name: 'मंगलम विंध्याचल धाम',
+  englishName: 'Mangalam Vindhyachal Dham',
   founder: 'अभिषेक मिश्रा',
   founderAlias: 'RAKA Mishra',
   phone: '8739000333',
   phoneFormatted: '+91 8739000333',
-  whatsappUrl: 'https://wa.me/918739000333?text=' + encodeURIComponent('नमस्ते, मुझे माँ विंध्यवासिनी दर्शन/पूजा/यात्रा सहायता के बारे में जानकारी चाहिए।'),
+  whatsappUrl: 'https://wa.me/918739000333?text=' + encodeURIComponent('नमस्ते, मुझे मंगलम विंध्याचल धाम से दर्शन/पूजा/यात्रा सहायता के बारे में जानकारी चाहिए।'),
   location: 'विंध्याचल, मिर्ज़ापुर, उत्तर प्रदेश - 231307',
   taglineHindi: 'माँ के दरबार तक, आपकी हर सेवा हमारे साथ।',
-  taglineEnglish: 'Your complete pilgrimage assistance in Vindhyachal.',
-  officialDisclaimer: 'महत्वपूर्ण सूचना: यह वेबसाइट एक निजी स्थानीय श्रद्धालु सहायता सेवा (Private Pilgrimage Assistance Service) है। यह विंध्य विकास परिषद, मंदिर प्रशासन अथवा किसी सरकारी संस्था की आधिकारिक वेबसाइट नहीं है। सभी विशेष सेवाएं मंदिर के तत्कालीन नियमों एवं उपलब्धता के अधीन हैं।',
+  taglineEnglish: 'Mangalam Vindhyachal Dham — Your complete pilgrimage assistance.',
+  officialDisclaimer: 'महत्वपूर्ण सूचना: यह वेबसाइट "मंगलम विंध्याचल धाम" एक निजी स्थानीय श्रद्धालु सहायता सेवा (Private Pilgrimage Assistance Service) है। यह विंध्य विकास परिषद, मंदिर प्रशासन अथवा किसी सरकारी संस्था की आधिकारिक वेबसाइट नहीं है। सभी विशेष सेवाएं मंदिर के तत्कालीन नियमों एवं उपलब्धता के अधीन हैं।',
 };
 
 export const QUICK_SERVICES = [
@@ -211,11 +211,12 @@ export const PUJA_CATEGORIES = [
   },
   {
     id: 'mundan-sanskar',
-    title: 'मुंडन एवं उपनयन संस्कार',
-    description: 'माँ के प्रांगण में बच्चों का प्रथम मुंडन संस्कार, वेदोक्त विधि एवं माँ का रक्षा कवच।',
+    title: 'मुंडन एवं उपनयन संस्कार (नाई सेवा उपलब्ध)',
+    description: 'माँ के प्रांगण व गंगा तट पर बच्चों का मुंडन संस्कार। अनुभवी व स्वच्छ नाई (Barber) की उत्तम व्यवस्था एवं वेदोक्त विधि से पूजन।',
     duration: '45-60 मिनट',
-    recommendedFor: 'नवजात शिशु व कुल परंपरा',
+    recommendedFor: 'नवजात शिशु, मुंडन व कुल परंपरा',
     icon: 'Heart',
+    hasBarberService: true,
   },
   {
     id: 'birthday-anniversary',
@@ -227,7 +228,63 @@ export const PUJA_CATEGORIES = [
   },
 ];
 
+export const SPECIAL_WEBSITE_OFFERS = [
+  {
+    id: 'morning-darshan-free',
+    title: 'प्रातः दर्शन (0 दक्षिणा सेवा)',
+    tag: 'वेबसाइट विशेष सुविधा',
+    timing: 'सुबह 5:00 AM से 8:00 AM',
+    gate: 'गेट नंबर 5, हनुमान गली',
+    highlight: 'शून्य दक्षिणा (कोई दक्षिणा नहीं)',
+    description: 'जो भी श्रद्धालु इस वेबसाइट के माध्यम से आएंगे, उनसे दर्शन हेतु कोई दक्षिणा शुल्क नहीं लिया जाएगा। जो भी दान-पुण्य करना हो, सीधे माई (माँ विंध्यवासिनी) के चरणों में करें।',
+    icon: 'Sparkles',
+    badgeColor: '#059669',
+    ctaText: 'प्रातः दर्शन सहायता लें',
+  },
+  {
+    id: 'hotel-ac-room-1100',
+    title: 'होटल AC रूम ऑफर',
+    tag: 'किफायती स्टे',
+    price: '₹1,100 / रात्रि',
+    highlight: 'मात्र ₹1,100 में AC रूम',
+    description: 'माँ विंध्यवासिनी मंदिर व गेट नंबर 5 के समीप स्वच्छ, आरामदायक व सुरक्षित पारिवारिक एसी कमरा। 24 घंटे गर्म पानी व वाई-फाई।',
+    icon: 'Hotel',
+    badgeColor: '#D97706',
+    ctaText: 'AC रूम बुक / पूछें',
+  },
+  {
+    id: 'prasad-mala-121',
+    title: 'प्रसाद व बड़ी दिव्य माला',
+    tag: 'भोग एवं अर्पण',
+    price: '₹121 मात्र',
+    highlight: '₹121 में प्रसाद + बड़ी माला',
+    description: 'माँ विंध्यवासिनी के पावन भोग हेतु शुद्ध पेड़ा/प्रसाद और माँ के श्री विग्रह हेतु सुंदर बड़ी ताजे पुष्पों की माला।',
+    icon: 'Gift',
+    badgeColor: '#800000',
+    ctaText: 'प्रसाद व माला बुक करें',
+  },
+  {
+    id: 'mundan-barber-service',
+    title: 'मुंडन संस्कार एवं नाई सेवा',
+    tag: 'संस्कार सेवा',
+    highlight: 'अनुभवी नाई (Barber) सुविधा',
+    description: 'गंगा तट अथवा मंदिर परिसर में बच्चों के मुंडन संस्कार हेतु स्वच्छ, निपुण व अनुभवी नाई की तुरंत व्यवस्था। संपर्क कर अग्रिम समय तय करें।',
+    icon: 'Scissors',
+    badgeColor: '#DC2626',
+    ctaText: 'मुंडन / नाई सेवा पूछें',
+  }
+];
+
 export const SHRINGAR_SEVA_LIST = [
+  {
+    id: 'prasad-badi-mala-121',
+    title: '₹121 पावन प्रसाद एवं बड़ी दिव्य पुष्प माला',
+    description: 'माँ विंध्यवासिनी के भोग हेतु ताज़ा शुद्ध प्रसाद व माँ के विग्रह पर अर्पण हेतु बड़ी सुगंधित फूलों की माला।',
+    timing: 'दर्शन के दौरान',
+    price: '₹121 मात्र',
+    icon: 'Gift',
+    badge: 'विशेष ऑफर ₹121',
+  },
   {
     id: 'phool-shringar',
     title: 'ताजे गुलाब व गेंदा पुष्प श्रृंगार',
@@ -260,19 +317,19 @@ export const SHRINGAR_SEVA_LIST = [
 
 export const DEMO_HOTELS = [
   {
-    id: 'hotel-1',
-    name: 'श्री विंध्य निवास (डेमो)',
-    type: 'Family Hotel',
-    location: 'माँ विंध्यवासिनी मंदिर मुख्य मार्ग (250 मीटर)',
-    priceCategory: 'Budget - Moderate',
-    approxPrice: '₹900 - ₹1,800 / रात्रि (अनुमानित)',
-    distance: '250m',
-    amenities: ['एसी / नॉन एसी', '24 घंटे गर्म पानी', 'स्वच्छ कमरा', 'लिफ्ट उपलब्ध', 'फ्री वाई-फाई'],
+    id: 'hotel-ac-special-1100',
+    name: 'श्री विंध्य निवास (विशेष AC रूम ऑफर)',
+    type: 'Family Hotel (AC Room)',
+    location: 'माँ विंध्यवासिनी मंदिर मुख्य मार्ग / गेट नं. 5 के निकट (200 मीटर)',
+    priceCategory: 'Special AC Offer',
+    approxPrice: '₹1,100 / रात्रि (विशेष एसी रूम)',
+    distance: '200m',
+    amenities: ['एसी रूम (Air Conditioned)', '24 घंटे गर्म पानी', 'स्वच्छ कमरा व बिस्तर', 'लिफ्ट उपलब्ध', 'फ्री वाई-फाई'],
     isFamilyFriendly: true,
     hasParking: true,
     hasAC: true,
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80',
-    tag: 'मंदिर के अत्यंत निकट',
+    tag: 'विशेष ऑफर: ₹1,100 AC रूम',
   },
   {
     id: 'hotel-2',
@@ -388,8 +445,16 @@ export const EMERGENCY_NUMBERS = [
 
 export const LIVE_NOTICES = [
   {
+    id: 'n-morning-darshan',
+    date: 'वेबसाइट विशेष सुविधा',
+    title: 'सुबह 5:00 से 8:00 AM दर्शन (गेट नं. 5, हनुमान गली)',
+    description: 'वेबसाइट से आने वाले श्रद्धालुओं से कोई दक्षिणा नहीं ली जाएगी — जो भी दान करना हो माई के चरणों में करें! होटल AC रूम ₹1,100 | प्रसाद + बड़ी माला ₹121 | मुंडन हेतु नाई सुविधा उपलब्ध।',
+    isUrgent: true,
+    tag: 'शून्य दक्षिणा दर्शन',
+  },
+  {
     id: 'n1',
-    date: 'आज का अपडेट',
+    date: 'दैनिक अपडेट',
     title: 'माँ विंध्यवासिनी मंदिर दैनिक आरती समय',
     description: 'मंगला आरती: 4:00 AM | मध्याह्न भोग: 12:00 PM | संध्या आरती: 7:00 PM | शयन आरती: 10:30 PM (व्यवस्था अनुसार)।',
     isUrgent: false,
@@ -407,7 +472,7 @@ export const LIVE_NOTICES = [
     id: 'n3',
     date: 'सुविधा सूचना',
     title: 'वरिष्ठ नागरिक व परिवार दर्शन सलाह',
-    description: 'भीड़ से बचने हेतु सुबह 5:30 से 8:00 AM अथवा दोपहर 1:30 से 4:00 PM के बीच दर्शन अत्यंत सुगम रहता है।',
+    description: 'भीड़ से बचने हेतु सुबह 5:00 से 8:00 AM अथवा दोपहर 1:30 से 4:00 PM के बीच दर्शन अत्यंत सुगम रहता है।',
     isUrgent: true,
     tag: 'सुगम दर्शन सलाह',
   }

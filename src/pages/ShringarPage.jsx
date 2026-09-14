@@ -53,6 +53,61 @@ export default function ShringarPage({ onOpenEnquiry }) {
           </Typography>
         </Paper>
 
+        {/* Special Prasad + Badi Mala ₹121 Offer Banner */}
+        <Paper
+          elevation={3}
+          sx={{
+            p: { xs: 2.5, sm: 3.5 },
+            mb: 5,
+            borderRadius: 4,
+            background: 'linear-gradient(135deg, #FFFDF8 0%, #FEF3C7 100%)',
+            border: '2px solid #800000',
+            boxShadow: '0 8px 24px rgba(128, 0, 0, 0.12)',
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={8}>
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }} flexWrap="wrap">
+                <Chip
+                  icon={<Gift size={16} color="#FFF" />}
+                  label="विशेष भोग एवं अर्पण"
+                  sx={{ backgroundColor: '#800000', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="🌸 मात्र ₹121 कॉम्बो"
+                  sx={{ backgroundColor: '#D97706', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="प्रसाद + बड़ी माला"
+                  sx={{ backgroundColor: 'rgba(5, 150, 105, 0.15)', color: '#065F46', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+              </Stack>
+              <Typography variant="h4" sx={{ fontWeight: 800, color: '#800000', mb: 1, fontSize: { xs: '1.3rem', sm: '1.7rem' } }}>
+                मात्र ₹121 में माँ का शुद्ध प्रसाद एवं बड़ी दिव्य पुष्प माला
+              </Typography>
+              <Typography variant="body1" sx={{ color: '#4A3B32', lineHeight: 1.7, mb: 1.5 }}>
+                माँ विंध्यवासिनी के श्री चरणों में भोग लगाने हेतु पावन शुद्ध पेड़ा/प्रसाद एवं माँ के विग्रह हेतु ताजे सुगंधित गुलाब व गेंदे की बड़ी पुष्प माला का विशेष प्रबंध।
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                <Typography variant="caption" sx={{ color: '#800000', fontWeight: 700 }}>✓ 100% शुद्ध देशी भोग</Typography>
+                <Typography variant="caption" sx={{ color: '#800000', fontWeight: 700 }}>✓ ताजी सुगंधित बड़ी पुष्प माला</Typography>
+                <Typography variant="caption" sx={{ color: '#800000', fontWeight: 700 }}>✓ दर्शन के समय तुरंत सुलभ</Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'left', md: 'center' } }}>
+              <Button
+                variant="contained"
+                size="large"
+                color="primary"
+                onClick={() => onOpenEnquiry && onOpenEnquiry('प्रसाद व बड़ी दिव्य माला सेवा (₹121)')}
+                sx={{ py: 1.5, px: 3.5, fontWeight: 800, fontSize: '1.02rem', borderRadius: 3, width: { xs: '100%', sm: 'auto' } }}
+              >
+                ₹121 प्रसाद माला बुक करें
+              </Button>
+            </Grid>
+          </Grid>
+        </Paper>
+
         {/* Mata Ji Respectful Hero Banner */}
         <Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}>
           <Grid item xs={12} md={6}>
@@ -172,11 +227,20 @@ export default function ShringarPage({ onOpenEnquiry }) {
                     {item.description}
                   </Typography>
 
-                  <Chip
-                    label={item.timing}
-                    size="small"
-                    sx={{ backgroundColor: '#F5ECE1', color: '#800000', fontWeight: 600, fontSize: '0.72rem', mb: 2 }}
-                  />
+                  <Stack direction="row" spacing={1} sx={{ mb: 2 }} flexWrap="wrap">
+                    <Chip
+                      label={item.timing}
+                      size="small"
+                      sx={{ backgroundColor: '#F5ECE1', color: '#800000', fontWeight: 600, fontSize: '0.72rem' }}
+                    />
+                    {item.badge && (
+                      <Chip
+                        label={item.badge}
+                        size="small"
+                        sx={{ backgroundColor: '#800000', color: '#FFFDF8', fontWeight: 800, fontSize: '0.72rem' }}
+                      />
+                    )}
+                  </Stack>
 
                   <Button
                     fullWidth

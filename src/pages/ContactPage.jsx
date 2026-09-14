@@ -80,7 +80,7 @@ export default function ContactPage() {
             हमसे संपर्क करें (Contact & Support)
           </Typography>
           <Typography variant="body1" sx={{ color: '#5C4941', maxWidth: 740, mx: 'auto', fontSize: '1.05rem' }}>
-            माँ विंध्यवासिनी दर्शन, पूजा, पंडित जी, होटल एवं स्थानीय वाहन से जुड़े किसी भी प्रश्न या सहायता हेतु RAKA Mishra से तुरंत संपर्क करें।
+            मंगलम विंध्याचल धाम — दर्शन, पूजा, पंडित जी, होटल एवं स्थानीय वाहन से जुड़े किसी भी प्रश्न या सहायता हेतु RAKA Mishra से तुरंत संपर्क करें।
           </Typography>
         </Box>
 

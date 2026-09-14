@@ -85,7 +85,7 @@ export const IMAGES = {
     { src: matajiUtsav, caption: 'उत्सव काल श्रृंगार' },
     { src: matajiPuja, caption: 'पवित्र पूजा अर्पण' },
     { src: homepagebg, caption: 'माँ विंध्यवासिनी मंदिर — विंध्याचल' },
-    { src: gallery1, caption: 'दर्शन दृश्य' },
+    { src: gallery1, caption: 'दर्शन दृश्य' }, 
     { src: gallery3, caption: 'माँ के दरबार में' },
   ],
 };

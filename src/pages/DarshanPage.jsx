@@ -14,6 +14,7 @@ import {
   MenuItem,
   Alert,
   Divider,
+  Stack,
 } from '@mui/material';
 import {
   Sparkles,
@@ -34,6 +35,7 @@ import CTASection from '../components/CTASection';
 import confetti from 'canvas-confetti';
 
 const DARSHAN_TYPES = [
+  'प्रातः दर्शन (सुबह 5-8 बजे, 0 दक्षिणा - गेट नं. 5 हनुमान गली)',
   'सामान्य दर्शन सहायता (General Queue)',
   'विशेष / VIP दर्शन सहायता मार्गदर्शन',
   'वरिष्ठ नागरिक सुगम दर्शन',
@@ -85,7 +87,7 @@ export default function DarshanPage({ onOpenEnquiry }) {
         <Box sx={{ textAlign: 'center', mb: 4 }}>
           <Chip
             icon={<Sparkles size={16} color="#800000" />}
-            label="माँ विंध्यवासिनी दर्शन सेवा"
+            label="मंगलम विंध्याचल धाम — दर्शन सेवा"
             sx={{ backgroundColor: 'rgba(128, 0, 0, 0.1)', color: '#800000', fontWeight: 700, mb: 1.5 }}
           />
           <Typography variant="h2" sx={{ fontWeight: 800, color: '#800000', fontSize: { xs: '1.9rem', md: '2.8rem' }, mb: 1.5 }}>
@@ -97,6 +99,74 @@ export default function DarshanPage({ onOpenEnquiry }) {
         </Box>
 
         <DisclaimerBanner sx={{ mb: 4 }} />
+
+        {/* Special Website Darshan Offer: 5-8 AM, Gate 5 Hanuman Gali, 0 Dakshina */}
+        <Paper
+          elevation={3}
+          sx={{
+            p: { xs: 2.5, sm: 4 },
+            mb: 5,
+            borderRadius: 4,
+            background: 'linear-gradient(135deg, #FFFDF8 0%, #FEF3C7 100%)',
+            border: '2px solid #D97706',
+            boxShadow: '0 10px 30px rgba(217, 119, 6, 0.15)',
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={8}>
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }} flexWrap="wrap">
+                <Chip
+                  icon={<Clock size={16} color="#FFF" />}
+                  label="सुबह 5:00 से 8:00 बजे दर्शन"
+                  sx={{ backgroundColor: '#059669', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  icon={<Sparkles size={16} color="#FFF" />}
+                  label="0 दक्षिणा (कोई दक्षिणा नहीं)"
+                  sx={{ backgroundColor: '#800000', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="📍 प्रवेश: गेट नंबर 5, हनुमान गली"
+                  sx={{ backgroundColor: 'rgba(217, 119, 6, 0.2)', color: '#92400E', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+              </Stack>
+
+              <Typography variant="h4" sx={{ fontWeight: 800, color: '#800000', mb: 1.5, fontSize: { xs: '1.4rem', sm: '1.8rem' } }}>
+                वेबसाइट श्रद्धालुओं हेतु प्रातः दर्शन विशेष सुविधा
+              </Typography>
+              <Typography variant="body1" sx={{ color: '#4A3B32', lineHeight: 1.8, fontSize: '1.02rem', mb: 2 }}>
+                जो भी श्रद्धालु इस वेबसाइट के माध्यम से दर्शन हेतु संपर्क करेंगे, उनसे <strong>सुबह 5:00 AM से 8:00 AM</strong> के मध्य दर्शन सहायता हेतु कोई दक्षिणा शुल्क नहीं लिया जाएगा। <strong>जो भी दान-पुण्य करना हो, सीधे माई (माँ विंध्यवासिनी) के चरणों में करें!</strong>
+              </Typography>
+
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, color: '#065F46', fontWeight: 700, fontSize: '0.9rem' }}>
+                  <CheckCircle2 size={18} color="#059669" />
+                  <span>प्रवेश द्वार: गेट नंबर 5, हनुमान गली</span>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, color: '#065F46', fontWeight: 700, fontSize: '0.9rem' }}>
+                  <CheckCircle2 size={18} color="#059669" />
+                  <span>शून्य दक्षिणा (100% पारदर्शी)</span>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8, color: '#065F46', fontWeight: 700, fontSize: '0.9rem' }}>
+                  <CheckCircle2 size={18} color="#059669" />
+                  <span>दान केवल माई के चरणों में</span>
+                </Box>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'left', md: 'center' } }}>
+              <Button
+                variant="contained"
+                size="large"
+                color="primary"
+                onClick={() => onOpenEnquiry && onOpenEnquiry('प्रातः दर्शन (सुबह 5-8 बजे, 0 दक्षिणा - गेट नं. 5 हनुमान गली)')}
+                sx={{ py: 1.6, px: 4, fontWeight: 800, fontSize: '1.05rem', borderRadius: 3, width: { xs: '100%', sm: 'auto' } }}
+              >
+                प्रातः दर्शन हेतु संपर्क करें
+              </Button>
+            </Grid>
+          </Grid>
+        </Paper>
 
         {/* 3 Core Darshan Pillars */}
         <Grid container spacing={3} sx={{ mb: 6 }}>

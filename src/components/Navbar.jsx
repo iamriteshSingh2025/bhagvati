@@ -88,7 +88,7 @@ export default function Navbar({ onOpenEnquiry }) {
               <Box
                 component="img"
                 src="/logo.svg"
-                alt="माँ विंध्यवासिनी दर्शन"
+                alt="मंगलम विंध्याचल धाम"
                 sx={{
                   width: { xs: 44, md: 50 },
                   height: { xs: 44, md: 50 },
@@ -107,7 +107,7 @@ export default function Navbar({ onOpenEnquiry }) {
                     letterSpacing: '-0.01em',
                   }}
                 >
-                  माँ विंध्यवासिनी दर्शन
+                  मंगलम विंध्याचल धाम
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mt: 0.2 }}>
                   <Chip
@@ -249,7 +249,7 @@ export default function Navbar({ onOpenEnquiry }) {
             <Box component="img" src="/logo.svg" alt="Logo" sx={{ width: 36, height: 36 }} />
             <Box>
               <Typography variant="subtitle1" sx={{ fontWeight: 800, color: '#800000', lineHeight: 1.1 }}>
-                माँ विंध्यवासिनी दर्शन
+                मंगलम विंध्याचल धाम
               </Typography>
               <Typography variant="caption" sx={{ color: '#B45309', fontWeight: 600 }}>
                 RAKA Mishra • 8739000333

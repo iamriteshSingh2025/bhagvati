@@ -20,6 +20,10 @@ import { saveLead, formatWhatsAppMessage } from '../utils/leadStore';
 import { BRAND_INFO } from '../data/pilgrimageData';
 
 const SERVICE_OPTIONS = [
+  'प्रातः दर्शन (सुबह 5-8 बजे, 0 दक्षिणा - गेट नं. 5 हनुमान गली)',
+  'होटल AC रूम (₹1,100 विशेष ऑफर)',
+  'प्रसाद व बड़ी दिव्य माला सेवा (₹121)',
+  'मुंडन संस्कार एवं नाई (Barber) सेवा',
   'सामान्य दर्शन सहायता',
   'विशेष / VIP दर्शन सहायता मार्गदर्शन',
   'वैदिक पूजा (संकल्प / सप्तशती / हवन)',

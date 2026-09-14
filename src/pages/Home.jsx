@@ -29,6 +29,10 @@ import {
   UserCheck,
   Calendar,
   Eye,
+  Scissors,
+  Gift,
+  Clock,
+  MapPin,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
@@ -39,6 +43,7 @@ import {
   DEMO_RESTAURANTS,
   FESTIVALS,
   LIVE_NOTICES,
+  SPECIAL_WEBSITE_OFFERS,
 } from '../data/pilgrimageData';
 import { IMAGES } from '../utils/assets';
 import ServiceCard from '../components/ServiceCard';
@@ -176,6 +181,35 @@ export default function Home({ onOpenEnquiry }) {
               </Button>
             </Stack>
 
+            {/* Special Client Offers Hero Ribbon */}
+            <Paper
+              elevation={4}
+              sx={{
+                p: { xs: 2, sm: 2.5 },
+                mb: 3.5,
+                borderRadius: 3,
+                background: 'linear-gradient(135deg, rgba(217, 119, 6, 0.95) 0%, rgba(180, 83, 9, 0.95) 100%)',
+                border: '2px solid #FDE68A',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.35)',
+                textAlign: 'center',
+                color: '#FFFDF8',
+              }}
+            >
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} alignItems="center" justifyContent="center" flexWrap="wrap">
+                <Chip
+                  label="वेबसाइट विशेष सुविधा"
+                  size="small"
+                  sx={{ backgroundColor: '#800000', color: '#FFFDF8', fontWeight: 800, fontSize: '0.75rem' }}
+                />
+                <Typography variant="body1" sx={{ fontWeight: 800, fontSize: { xs: '0.92rem', md: '1.05rem' }, color: '#FFFDF8' }}>
+                  🌅 सुबह 5:00 से 8:00 दर्शन (गेट नं. 5, हनुमान गली) — शून्य दक्षिणा!
+                </Typography>
+              </Stack>
+              <Typography variant="caption" sx={{ display: 'block', mt: 0.8, color: '#FEF3C7', fontSize: { xs: '0.78rem', sm: '0.85rem' } }}>
+                वेबसाइट से आने वाले भक्तों से कोई दक्षिणा शुल्क नहीं • दान सीधे माँ के चरणों में करें | होटल AC रूम मात्र ₹1,100 | प्रसाद + बड़ी माला ₹121 | मुंडन हेतु नाई सेवा उपलब्ध
+              </Typography>
+            </Paper>
+
             {/* Subtle Service Trust Indicators (No Fake Stats) */}
             <Grid container spacing={1.5} justifyContent="center" sx={{ maxWidth: 840, mx: 'auto' }}>
               {[
@@ -215,6 +249,219 @@ export default function Home({ onOpenEnquiry }) {
       <Container maxWidth="xl" sx={{ mt: 3, mb: 2 }}>
         <DisclaimerBanner />
       </Container>
+
+      {/* 2.5 SPECIAL WEBSITE EXCLUSIVE OFFERS SECTION */}
+      <Box
+        sx={{
+          py: { xs: 5, md: 7 },
+          background: 'linear-gradient(180deg, #FFFDF8 0%, #F5ECE1 100%)',
+          borderTop: '2px solid rgba(217, 119, 6, 0.25)',
+          borderBottom: '2px solid rgba(217, 119, 6, 0.25)',
+        }}
+      >
+        <Container maxWidth="xl">
+          <Box sx={{ textAlign: 'center', mb: { xs: 3, md: 5 } }}>
+            <Chip
+              icon={<Sparkles size={16} color="#D97706" />}
+              label="वेबसाइट विशेष श्रद्धालु सुविधाएं"
+              sx={{
+                backgroundColor: 'rgba(217, 119, 6, 0.15)',
+                color: '#B45309',
+                fontWeight: 800,
+                fontSize: '0.85rem',
+                mb: 1.5,
+                border: '1px solid rgba(217, 119, 6, 0.35)',
+              }}
+            />
+            <Typography variant="h2" sx={{ fontWeight: 800, color: '#800000', fontSize: { xs: '1.8rem', md: '2.5rem' }, mb: 1 }}>
+              माँ विंध्यवासिनी दरबार विशेष सुविधाएं एवं ऑफर
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#5C4941', maxWidth: 740, mx: 'auto', fontSize: { xs: '0.96rem', md: '1.08rem' } }}>
+              वेबसाइट के माध्यम से आने वाले श्रद्धालुओं के लिए प्रातः दर्शन, सुलभ AC कमरा, शुद्ध प्रसाद व मुंडन संस्कार की पारदर्शी व्यवस्था
+            </Typography>
+          </Box>
+
+          <Grid container spacing={3}>
+            {/* Offer 1: Early Morning Darshan (0 Dakshina) */}
+            <Grid item xs={12} sm={6} lg={3}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 3.5,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '2px solid #059669',
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 8px 24px rgba(5, 150, 105, 0.12)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    boxShadow: '0 16px 36px rgba(5, 150, 105, 0.22)',
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
+                  <Chip label="शून्य दक्षिणा (0 Fee)" size="small" sx={{ backgroundColor: 'rgba(5, 150, 105, 0.12)', color: '#065F46', fontWeight: 800 }} />
+                  <Clock size={20} color="#059669" />
+                </Box>
+                <Typography variant="h6" sx={{ fontWeight: 800, color: '#800000', mb: 0.5 }}>
+                  प्रातः दर्शन (5-8 AM)
+                </Typography>
+                <Typography variant="caption" sx={{ color: '#D97706', fontWeight: 700, mb: 1.5, display: 'block' }}>
+                  📍 गेट नंबर 5, हनुमान गली
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#4A3B32', mb: 2.5, lineHeight: 1.6, flexGrow: 1 }}>
+                  इस वेबसाइट से आने वाले भक्तों से कोई दक्षिणा शुल्क नहीं लिया जाएगा। जो भी दान-पुण्य करना हो, सीधे माई के चरणों में करें!
+                </Typography>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  sx={{ backgroundColor: '#059669', color: '#FFF', fontWeight: 700, '&:hover': { backgroundColor: '#047857' } }}
+                  onClick={() => onOpenEnquiry && onOpenEnquiry('प्रातः दर्शन (सुबह 5-8 बजे, 0 दक्षिणा - गेट नं. 5 हनुमान गली)')}
+                >
+                  दर्शन सहायता पूछें
+                </Button>
+              </Paper>
+            </Grid>
+
+            {/* Offer 2: Hotel AC Room 1100 */}
+            <Grid item xs={12} sm={6} lg={3}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 3.5,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '2px solid #D97706',
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 8px 24px rgba(217, 119, 6, 0.12)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    boxShadow: '0 16px 36px rgba(217, 119, 6, 0.22)',
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
+                  <Chip label="विशेष ऑफर" size="small" sx={{ backgroundColor: 'rgba(217, 119, 6, 0.15)', color: '#B45309', fontWeight: 800 }} />
+                  <Hotel size={20} color="#D97706" />
+                </Box>
+                <Typography variant="h6" sx={{ fontWeight: 800, color: '#800000', mb: 0.5 }}>
+                  होटल AC रूम
+                </Typography>
+                <Typography variant="caption" sx={{ color: '#B45309', fontWeight: 700, mb: 1.5, display: 'block' }}>
+                  💰 मात्र ₹1,100 / रात्रि
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#4A3B32', mb: 2.5, lineHeight: 1.6, flexGrow: 1 }}>
+                  मंदिर व गेट नं. 5 के निकट स्वच्छ, आरामदायक व सुरक्षित पारिवारिक वातानुकूलित कमरा। 24 घंटे गर्म पानी व वाई-फाई सुविधा।
+                </Typography>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  color="secondary"
+                  sx={{ fontWeight: 700 }}
+                  onClick={() => onOpenEnquiry && onOpenEnquiry('होटल AC रूम (₹1,100 विशेष ऑफर)')}
+                >
+                  AC रूम बुक / पूछें
+                </Button>
+              </Paper>
+            </Grid>
+
+            {/* Offer 3: Prasad + Big Mala 121 */}
+            <Grid item xs={12} sm={6} lg={3}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 3.5,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '2px solid #800000',
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 8px 24px rgba(128, 0, 0, 0.12)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    boxShadow: '0 16px 36px rgba(128, 0, 0, 0.22)',
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
+                  <Chip label="भोग व अर्पण" size="small" sx={{ backgroundColor: 'rgba(128, 0, 0, 0.1)', color: '#800000', fontWeight: 800 }} />
+                  <Gift size={20} color="#800000" />
+                </Box>
+                <Typography variant="h6" sx={{ fontWeight: 800, color: '#800000', mb: 0.5 }}>
+                  प्रसाद + बड़ी पुष्प माला
+                </Typography>
+                <Typography variant="caption" sx={{ color: '#800000', fontWeight: 700, mb: 1.5, display: 'block' }}>
+                  🌸 मात्र ₹121 कॉम्बो
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#4A3B32', mb: 2.5, lineHeight: 1.6, flexGrow: 1 }}>
+                  माँ विंध्यवासिनी के भोग हेतु शुद्ध पेड़ा/प्रसाद और माँ के श्री विग्रह पर अर्पण हेतु दिव्य बड़ी ताजे फूलों की माला।
+                </Typography>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  sx={{ fontWeight: 700 }}
+                  onClick={() => onOpenEnquiry && onOpenEnquiry('प्रसाद व बड़ी दिव्य माला सेवा (₹121)')}
+                >
+                  प्रसाद माला बुक करें
+                </Button>
+              </Paper>
+            </Grid>
+
+            {/* Offer 4: Mundan Sanskar & Nai Barber Service */}
+            <Grid item xs={12} sm={6} lg={3}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 3,
+                  borderRadius: 3.5,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '2px solid #DC2626',
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '0 8px 24px rgba(220, 38, 38, 0.12)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    boxShadow: '0 16px 36px rgba(220, 38, 38, 0.22)',
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
+                  <Chip label="नाई सुविधा" size="small" sx={{ backgroundColor: 'rgba(220, 38, 38, 0.1)', color: '#DC2626', fontWeight: 800 }} />
+                  <Scissors size={20} color="#DC2626" />
+                </Box>
+                <Typography variant="h6" sx={{ fontWeight: 800, color: '#800000', mb: 0.5 }}>
+                  मुंडन संस्कार व नाई सेवा
+                </Typography>
+                <Typography variant="caption" sx={{ color: '#DC2626', fontWeight: 700, mb: 1.5, display: 'block' }}>
+                  ✂️ अनुभवी नाई (Barber) उपलब्ध
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#4A3B32', mb: 2.5, lineHeight: 1.6, flexGrow: 1 }}>
+                  गंगा तट अथवा मंदिर प्रांगण में बच्चों के मुंडन संस्कार हेतु अनुभवी व स्वच्छ नाई (हजाम) की पूर्ण व्यवस्था। संपर्क कर समय तय करें।
+                </Typography>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  sx={{ backgroundColor: '#DC2626', color: '#FFF', fontWeight: 700, '&:hover': { backgroundColor: '#B91C1C' } }}
+                  onClick={() => onOpenEnquiry && onOpenEnquiry('मुंडन संस्कार एवं नाई (Barber) सेवा')}
+                >
+                  मुंडन / नाई सेवा पूछें
+                </Button>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
 
       {/* 3. QUICK SERVICES SECTION */}
       <Box sx={{ py: { xs: 5, md: 8 }, backgroundColor: '#FBF7F0' }}>

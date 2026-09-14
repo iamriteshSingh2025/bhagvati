@@ -51,6 +51,7 @@ export default function PanditPage({ onOpenEnquiry }) {
             <Chip label="✓ गोत्र व कुल परंपरा संकल्प" sx={{ backgroundColor: '#F5ECE1', color: '#800000', fontWeight: 600 }} />
             <Chip label="✓ शास्त्रोक्त मंत्रोच्चार" sx={{ backgroundColor: '#F5ECE1', color: '#800000', fontWeight: 600 }} />
             <Chip label="✓ दक्षिणा व विधि की पहले से स्पष्टता" sx={{ backgroundColor: '#F5ECE1', color: '#800000', fontWeight: 600 }} />
+            <Chip label="✓ मुंडन संस्कार हेतु नाई (Barber) समन्वय" sx={{ backgroundColor: '#FEE2E2', color: '#DC2626', fontWeight: 700 }} />
           </Box>
         </Paper>
 

@@ -29,7 +29,7 @@ export default function StayPage({ onOpenEnquiry }) {
   const filteredHotels = DEMO_HOTELS.filter((hotel) => {
     if (filterType !== 'ALL') {
       if (filterType === 'Dharamshala' && !hotel.type.includes('Dharamshala')) return false;
-      if (filterType === 'Budget' && !hotel.priceCategory.includes('Budget')) return false;
+      if (filterType === 'Budget' && !hotel.priceCategory.includes('Budget') && !hotel.priceCategory.includes('Special')) return false;
       if (filterType === 'Premium' && !hotel.priceCategory.includes('Premium')) return false;
     }
     if (onlyAC && !hotel.hasAC) return false;
@@ -57,6 +57,61 @@ export default function StayPage({ onOpenEnquiry }) {
         </Box>
 
         <DisclaimerBanner sx={{ mb: 4 }} />
+
+        {/* Special AC Room ₹1,100 Offer Banner */}
+        <Paper
+          elevation={3}
+          sx={{
+            p: { xs: 2.5, sm: 3.5 },
+            mb: 4,
+            borderRadius: 4,
+            background: 'linear-gradient(135deg, #FFFDF8 0%, #FEF3C7 100%)',
+            border: '2px solid #D97706',
+            boxShadow: '0 8px 24px rgba(217, 119, 6, 0.15)',
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={8}>
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }} flexWrap="wrap">
+                <Chip
+                  icon={<Hotel size={16} color="#FFF" />}
+                  label="विशेष होटल AC रूम ऑफर"
+                  sx={{ backgroundColor: '#D97706', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="💰 मात्र ₹1,100 / रात्रि"
+                  sx={{ backgroundColor: '#800000', color: '#FFF', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+                <Chip
+                  label="मंदिर व गेट नं. 5 के समीप"
+                  sx={{ backgroundColor: 'rgba(5, 150, 105, 0.15)', color: '#065F46', fontWeight: 800, fontSize: '0.82rem' }}
+                />
+              </Stack>
+              <Typography variant="h4" sx={{ fontWeight: 800, color: '#800000', mb: 1, fontSize: { xs: '1.3rem', sm: '1.7rem' } }}>
+                विंध्याचल में मात्र ₹1,100 में स्वच्छ व सुरक्षित AC रूम
+              </Typography>
+              <Typography variant="body1" sx={{ color: '#4A3B32', lineHeight: 1.7, mb: 1.5 }}>
+                माँ विंध्यवासिनी मंदिर एवं गेट नंबर 5 (हनुमान गली) के समीप सुविधाजनक, स्वच्छ व पारिवारिक वातानुकूलित (AC) कमरा। 24 घंटे गर्म पानी, लिफ्ट व फ्री वाई-फाई सुविधा।
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                <Typography variant="caption" sx={{ color: '#059669', fontWeight: 700 }}>✓ एसी / नॉन-एसी विकल्प उपलब्ध</Typography>
+                <Typography variant="caption" sx={{ color: '#059669', fontWeight: 700 }}>✓ परिवार व वरिष्ठ नागरिकों हेतु सुरक्षित</Typography>
+                <Typography variant="caption" sx={{ color: '#059669', fontWeight: 700 }}>✓ मंदिर से 200 मीटर दूरी</Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'left', md: 'center' } }}>
+              <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+                onClick={() => onOpenEnquiry && onOpenEnquiry('होटल AC रूम (₹1,100 विशेष ऑफर)')}
+                sx={{ py: 1.5, px: 3.5, fontWeight: 800, fontSize: '1.02rem', borderRadius: 3, width: { xs: '100%', sm: 'auto' } }}
+              >
+                ₹1,100 AC रूम बुक / पूछें
+              </Button>
+            </Grid>
+          </Grid>
+        </Paper>
 
         {/* Filters Bar */}
         <Paper

@@ -22,15 +22,15 @@ export default function TopNoticeTicker() {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, overflow: 'hidden' }}>
           <Chip
             size="small"
-            icon={<Volume2 size={14} color="#F59E0B" />}
-            label="लाइव सूचना"
+            icon={<Volume2 size={14} color="#FDE68A" />}
+            label="विशेष वेबसाइट सुविधा"
             sx={{
-              backgroundColor: 'rgba(217, 119, 6, 0.25)',
-              color: '#FDE68A',
-              fontWeight: 700,
+              backgroundColor: '#D97706',
+              color: '#FFFDF8',
+              fontWeight: 800,
               fontSize: '0.72rem',
-              height: 22,
-              border: '1px solid rgba(245, 158, 11, 0.4)',
+              height: 23,
+              boxShadow: '0 0 10px rgba(245, 158, 11, 0.5)',
             }}
           />
           <Typography
